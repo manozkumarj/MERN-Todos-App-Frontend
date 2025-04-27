@@ -36,7 +36,7 @@ const Dashboard = () => {
     // setIsLoading(true);
     const randomString = getRandomString(10);
     console.log("todo --> ", todo);
-    console.log("randomString --> ", randomString);
+    // console.log("randomString --> ", randomString);
     const tempTodo = {
       id: randomString,
       title: todo,
