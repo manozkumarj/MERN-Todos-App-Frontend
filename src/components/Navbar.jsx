@@ -16,6 +16,10 @@ const unAuthorizedNavlinks = [
     label: "Login",
     link: "/login",
   },
+  {
+    label: "Dashboard",
+    link: "/dashboard",
+  },
 ];
 
 const authorizedNavlinks = [
