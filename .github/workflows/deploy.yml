@@ -1,6 +1,7 @@
 name: Deploy
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -45,5 +46,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACC_TOKEN }}
-          publish_dir: ./dists
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
