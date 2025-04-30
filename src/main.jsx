@@ -7,7 +7,7 @@ import AuthContextProvider from "./contexts/AuthContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/MERN-Todos-App-Frontend'>
       <AuthContextProvider>
         <App />
       </AuthContextProvider>
