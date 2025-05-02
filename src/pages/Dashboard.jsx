@@ -62,7 +62,7 @@ const Dashboard = () => {
                   className={`w-full font-bold py-2.5 px-3 border-1 rounded-md`}
                   type="text"
                   id="email"
-                  placeholder="Enter Todo (Press Enter to add)"
+                  placeholder="Enter Todo (Press Enter to add.)"
                   autoComplete="off"
                   value={todo}
                   ref={inputFocus}
