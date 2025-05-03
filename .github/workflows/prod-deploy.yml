@@ -1,7 +1,10 @@
-name: Dev-deploy
+name: Prod-deploy
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
@@ -49,3 +52,24 @@ jobs:
       # Publish Image to docker hub
       - name: Publish Image to docker hub
         run: docker push ${{ env.DOCKER_USERNAME }}/mern-todos-app-frontend:latest
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      # Download artifact from build job
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
