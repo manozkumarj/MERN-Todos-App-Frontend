@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function VerifyAccount() {
-  return (
-    <div>This is VerifyAccount page</div>
-  )
+  return <div>This is VerifyAccount page</div>;
 }
 
-export default VerifyAccount
+export default VerifyAccount;

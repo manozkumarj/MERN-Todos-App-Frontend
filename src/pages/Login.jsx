@@ -69,13 +69,13 @@ const Login = () => {
   const notify = () => toast.success("Here is your toast.");
 
   return (
-    <div className="min-h-screen">
-      <div className="min-h-[90%] flex justify-center items-center align-middle">
-        <div className="w-full mx-12 md:w-1/3 px-16 py-8 my-12 bg-white shadow-[0px_0px_6px_0px_rgba(0,_0,_0,_0.1)] inset-shadow-2xs rounded-md">
-          <h1 className="text-4xl text-center font-bold mb-8">Login</h1>
-          <form className="form" onSubmit={onSubmit}>
-            <div className="my-3">
-              <label htmlFor="email" className="font-bold">
+    <div className='min-h-screen'>
+      <div className='min-h-[90%] flex justify-center items-center align-middle'>
+        <div className='w-full mx-12 md:w-1/3 px-16 py-8 my-12 bg-white shadow-[0px_0px_6px_0px_rgba(0,_0,_0,_0.1)] inset-shadow-2xs rounded-md'>
+          <h1 className='text-4xl text-center font-bold mb-8'>Login</h1>
+          <form className='form' onSubmit={onSubmit}>
+            <div className='my-3'>
+              <label htmlFor='email' className='font-bold'>
                 Email
               </label>
               <br />
@@ -83,20 +83,20 @@ const Login = () => {
                 className={`w-full font-bold py-2 px-3 border-1 my-1 rounded-md ${
                   errors?.email?.message && "border-red-500"
                 }`}
-                type="text"
-                id="email"
-                placeholder="Enter Email"
-                autoComplete="off"
+                type='text'
+                id='email'
+                placeholder='Enter Email'
+                autoComplete='off'
                 {...loginHandler("email")}
               />
               {errors?.email && (
-                <span className="text-sm font-bold text-red-600">
+                <span className='text-sm font-bold text-red-600'>
                   {errors.email.message}
                 </span>
               )}
             </div>
-            <div className="my-3">
-              <label htmlFor="password" className="font-bold">
+            <div className='my-3'>
+              <label htmlFor='password' className='font-bold'>
                 Password
               </label>
               <br />
@@ -104,32 +104,34 @@ const Login = () => {
                 className={`w-full font-bold py-2 px-3 border-1 my-1 rounded-md ${
                   errors?.password?.message && "border-red-500"
                 }`}
-                type="password"
-                id="password"
-                placeholder="Enter Password"
+                type='password'
+                id='password'
+                placeholder='Enter Password'
                 {...loginHandler("password")}
               />
               {errors?.password && (
-                <span className="text-sm font-bold text-red-600">
+                <span className='text-sm font-bold text-red-600'>
                   {errors.password.message}
                 </span>
               )}
             </div>
-            <div className="mt-5 mb-3">
+            <div className='mt-5 mb-3'>
               <button
-                type="submit"
+                type='submit'
                 disabled={isLogging}
                 className={`w-full flex justify-center items-center text-white font-bold bg-blue-500 hover:bg-blue-700 rounded-lg text-lg px-5 my-2 ${
                   !isLogging ? "py-2.5 cursor-pointer" : "py-3.5"
                 }`}
               >
-                {isLogging && (<Loader
-                  size={'size-6'}
-                  borderWidth={'border-3'}
-                  lightThemeColor={"text-white"}
-                  darkThemeColor={"text-red-600"}
-                />)}
-                {!isLogging && (<span>Login</span>)}
+                {isLogging && (
+                  <Loader
+                    size={"size-6"}
+                    borderWidth={"border-3"}
+                    lightThemeColor={"text-white"}
+                    darkThemeColor={"text-red-600"}
+                  />
+                )}
+                {!isLogging && <span>Login</span>}
               </button>
             </div>
           </form>
