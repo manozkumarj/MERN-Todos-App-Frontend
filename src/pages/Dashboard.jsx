@@ -6,11 +6,6 @@ import Tooltip from "@mui/material/Tooltip";
 import { Switch } from "@mui/material";
 import Modal from "../components/Modal.jsx";
 
-// const user = {
-//   name: "Manoj",
-//   email: "manoj@gmail.com",
-// };
-
 const tempTodo = [
   {
     id: "as12sf",
